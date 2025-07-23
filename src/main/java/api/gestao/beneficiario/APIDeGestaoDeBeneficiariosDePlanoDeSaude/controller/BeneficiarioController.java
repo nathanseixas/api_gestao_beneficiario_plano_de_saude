@@ -33,16 +33,22 @@ public class BeneficiarioController {
    }
 
 
-   @GetMapping("/id/documento")
+   @GetMapping("/{id}/documento")
     public List<DocumentoDTO> listarDocumentos(@PathVariable Long id) {
         return beneficiarioService.listarDocumento(id);
    }
 
-   @GetMapping("/{id}")
+   @PutMapping("/{id}")
+   public ResponseEntity<BeneficiarioResponse> atualizar(@PathVariable Long id, @RequestBody BeneficiarioRequest request) {
+        return ResponseEntity.ok(beneficiarioService.atualizar(id, request));
+   }
+
+   @DeleteMapping("/{id}")
     public ResponseEntity<Void> remover(@PathVariable Long id) {
         beneficiarioService.remover(id);
         return ResponseEntity.noContent().build();
 
    }
+
 
 }
