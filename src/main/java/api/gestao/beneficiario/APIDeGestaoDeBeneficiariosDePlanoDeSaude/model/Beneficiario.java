@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
+@Getter //lombok
+@Setter //lombok
 public class Beneficiario extends BaseEntity {
 
     @Id

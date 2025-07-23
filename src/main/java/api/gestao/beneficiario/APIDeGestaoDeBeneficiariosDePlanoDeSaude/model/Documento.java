@@ -6,8 +6,8 @@ import lombok.Setter;
 
 
 @Entity
-@Getter
-@Setter
+@Getter//lombok
+@Setter//lombok
 public class Documento extends BaseEntity {
 
     @Id
